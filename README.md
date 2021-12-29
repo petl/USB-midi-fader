@@ -173,5 +173,5 @@ Mixxx is quite chill about different midi inputs. I used the learning wizard to 
 
 <p><h2> Conclusion </h2> </p>So that's that, I hope this guide didn't get too long. The text is copied from my blog <a href='https://quiescentcurrent.com/blog/post.php?p_id=69'>here</a>. Thanks to the original <a href='https://www.instructables.com/DIY-USB-Midi-Controller-With-Arduino-a-Beginners-G/'>tutorial</a> I was loosely following.  If you have any questions or feedback just write a message or leave a comment on the <a href='https://quiescentcurrent.com/blog/post.php?p_id=69'>blog post</a>. <3 <br><br>
 
-<p align=\"right\"><img style=\"max-width: 100%;\" src=\"https://github.com/petl/USB-midi-fader/blob/main/pictures/IMG_20211229_122905.jpg\" alt=\"\" />Less glamorous shot of the final product.</p>
+<p align="right"><img style="max-width: 100%;" src="https://github.com/petl/USB-midi-fader/blob/main/pictures/IMG_20211229_122905.jpg" alt="" />Less glamorous shot of the final product.</p>
 </p>            
