@@ -12,45 +12,50 @@
  * 
  */
 
-#define button_red_in  7
+
+//Define the pinout and variables to store the previous values
+// Could have done this in an array, but i think it's easier to understand like this
+#define button_red_in  7 // big red button, left side
 int button_red_in_prev = 0 ; 
 #define button_red_out  4
 
-#define button_green_in  8
-int button_green_in_prev = 0 ; 
-#define button_green_out  5
-
-#define button_blue_in  9
-int button_blue_in_prev = 0 ; 
-#define button_blue_out  6
-
-#define switch_red_in  2
+#define switch_red_in  2 //button row in the middle left
 int switch_red_in_prev = 0 ; 
 #define switch_red_out  3
 
-#define switch_top_in  A1
+#define button_green_in  8 //button row in the middle left
+int button_green_in_prev = 0 ; 
+#define button_green_out  5
+
+#define button_blue_in  9 //button row in the middle left
+int button_blue_in_prev = 0 ; 
+#define button_blue_out  6
+
+#define switch_top_in  A1 //switch row on the right
 int switch_top_in_prev = 0 ; 
 #define switch_top_out  12
 
-#define switch_middle_in  A0
+#define switch_middle_in  A0//switch row on the right
 int switch_middle_in_prev = 0 ; 
 #define switch_middle_out  11
 
-#define switch_bottom_in  13
+#define switch_bottom_in  13//switch row on the right
 int switch_bottom_in_prev = 0 ; 
 #define switch_bottom_out 10
 
-#define slider_1_in  A5
+#define slider_1_in  A5 // sliders are numbered LEFT to RIGHT
 int slider_1_in_prev = 0 ; 
 #define slider_2_in  A4
 int slider_2_in_prev = 0 ; 
 #define slider_3_in  A3
 int slider_3_in_prev = 0 ; 
-#define slider_4_in  A2
+#define slider_4_in  A2 // this is the rightmost slider
 int slider_4_in_prev = 0 ; 
 
-#define led_green_out  0
-#define led_red_out  1
+#define led_green_out  0 // Don't use this as outputs, they are connected to RX/TX!
+#define led_red_out  1  //  Don't use this as outputs, they are connected to RX/TX!
+
+
 
 // MIDI Assignments 
 byte midiCh = 1; //* MIDI channel to be used
@@ -60,8 +65,10 @@ byte cc = 1; //* Lowest MIDI CC to be used
 
 
 void setup() {
-  // put your setup code here, to run once:
+  //hairless midi uses 115200 by default
   Serial.begin(115200);
+
+  //we have to enable pullups for our inputs, as they would be floating otherwise
   pinMode(button_red_in ,INPUT_PULLUP);
   pinMode(button_green_in ,INPUT_PULLUP);
   pinMode(button_blue_in ,INPUT_PULLUP);
@@ -77,6 +84,7 @@ void setup() {
   pinMode(switch_top_out ,OUTPUT);
   pinMode(switch_middle_out ,OUTPUT);
   pinMode(switch_bottom_out ,OUTPUT);
+  //set the switch outputs to high, so they initialize correctly 
   digitalWrite(switch_red_out, HIGH);
   digitalWrite(switch_top_out, HIGH);
   digitalWrite(switch_middle_out, HIGH);
@@ -87,6 +95,8 @@ void setup() {
 }
 
 void loop() {
+  //in here we just check if something has changed repeatedly
+  
   //BUTTONS
   if(digitalRead(button_red_in) != button_red_in_prev){
     if(digitalRead(button_red_in) == HIGH){
@@ -199,19 +209,8 @@ void noteOn(byte channel, byte pitch, byte velocity) {
   byte buf[] = {0x90 | channel, pitch, velocity};
   int len = 3;
   Serial.write(buf, len);
-  /*byte channel_write = 0x90 | channel;
-  Serial.write(channel_write);
-  Serial.write(pitch);
-  Serial.write(velocity);
-  */
+
 }
-/*
-void noteOff(byte channel, byte pitch, byte velocity) {
-  byte buf[] = {0x08, 0x80 | channel, pitch, velocity};
-  int len = 3;
-  Serial.write(buf, len);
-}
-*/
 void controlChange(byte channel, byte control, byte value) {
   //byte buf[] = {0x0B, 0xB0 | channel, control, value};
   byte buf[] = {0xB0 | channel, control, value};
