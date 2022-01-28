@@ -3,6 +3,8 @@ A simple to build USB midi controller.
 
 Please note that the V2 of this controller can be bought as a complete set with better components, a pre assembled PCB and much more on my tindie: https://www.tindie.com/products/petl/midi-fader-controller-usb-c/
 
+<p align="right"><img style="max-width: 100%;" src="https://github.com/petl/USB-midi-fader/blob/main/pictures/v2/IMG_20220127_143926.jpg" alt="" /> Fader v2.</p>
+
 If you're not interested in that, you can still make everything yourself, all the files (v1 & v2) are open source!
 
 <p><p><h2> Motivation </h2> </p>
