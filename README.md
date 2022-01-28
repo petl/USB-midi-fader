@@ -1,5 +1,5 @@
 # USB-midi-fader
-A simple to build USB midi controller
+A simple to build USB midi controller.
 
 <p><p><h2> Motivation </h2> </p>
 I have been browsing the net for an easy to use USB Midi controller which can be used with my mixing software  <a href='https://mixxx.org'>Mixxx</a>  to be able to mix podcasts on the go. Initially I wanted to buy an off the shelf product from Korg, the <a href='https://www.korg.com/de/products/computergear/nanokontrol2/'>Nanokontrol 2</a>, but they raised their prices to 69€. That's honestly not a lot for a product this powerful, but what if I tell you that I can make it at home for less? Let's say 54€ less? Yes, I paid 15€ for the stuff (without the Arduino clone i already had). Read it on my blog <a href='https://quiescentcurrent.com/blog/post.php?p_id=69'>here</a>.<br>
